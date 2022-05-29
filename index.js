@@ -1,7 +1,7 @@
-require("dotenv").config();
-const TelegramBot = require("node-telegram-bot-api");
+require('dotenv').config();
+const TelegramBot = require('node-telegram-bot-api');
 const TOKEN = process.env.TOKEN;
-const express = require("express");
+const express = require('express');
 const app = express();
 
 const bot = new TelegramBot(TOKEN, {
@@ -15,10 +15,10 @@ const bot = new TelegramBot(TOKEN, {
 //     );
 // });
 
-bot.on("message", (msg) => {
+bot.on('message', (msg) => {
     if (msg.from.id == 981288955 && msg.chat.id != -1001268783396) {
-        bot.sendMessage(-1001268783396, msg.text);
         console.log(msg);
+        bot.sendMessage(-1001268783396, msg.text);
     }
 });
 
