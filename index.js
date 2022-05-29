@@ -16,9 +16,9 @@ const bot = new TelegramBot(TOKEN, {
 // });
 
 bot.on('message', (msg) => {
-    if (msg.from.id == 981288955 && msg.chat.id != -1001268783396) {
+    if (msg.from.id == 981288955 && msg.chat.id != -1001738222223) {
         console.log(msg);
-        bot.sendMessage(-1001268783396, msg.text);
+        bot.sendMessage(-1001738222223, msg.text);
     }
 });
 
