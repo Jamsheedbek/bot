@@ -13,8 +13,7 @@ const bot = new TelegramBot(TOKEN, {
 
 app.post('/', (req, res) => {
     try {
-        console.log(req.body)
-        var { lat, long } = req.body;
+        var { lat, long } = req.headers;
         if (lat && long) {
             console.log(lat,long)
             bot.sendLocation(1771234776, lat, long);
