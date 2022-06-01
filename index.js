@@ -11,7 +11,7 @@ const bot = new TelegramBot(TOKEN, {
     polling: true,
 });
 
-app.get('/', (req, res) => {
+app.post('/', (req, res) => {
     try {
         var { lat, long } = req.body;
         if (lat && long) {
