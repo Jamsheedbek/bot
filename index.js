@@ -9,11 +9,16 @@ const bot = new TelegramBot(TOKEN, {
 });
 
 app.get('/', (req, res) => {
-    var { lat, long } = req.body;
-    if (lat && long) {
-        bot.sendLocation(1771234776, lat, long);
+    try {
+        var { lat, long } = req.body;
+        if (lat && long) {
+            bot.sendLocation(1771234776, lat, long);
+        }
+        res.send('ok');
+    } catch (error){
+        console.log(error.message)
     }
-    res.send('ok');
+    
 });
 
 app.listen(process.env.PORT || 8080, console.log(8080));
