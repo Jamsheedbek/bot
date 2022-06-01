@@ -8,18 +8,12 @@ const bot = new TelegramBot(TOKEN, {
     polling: true,
 });
 
-// bot.onText(/\/start/, (msg) => {
-//     bot.sendMessage(
-//         '@Shb_TheBestTeam',
-//         "Salom " + msg.from.first_name + " botimizga xush kelibsiz"
-//     );
-// });
-
-bot.on('message', (msg) => {
-    if (msg.from.id == 981288955 && msg.chat.id != -1001738222223) {
-        console.log(msg);
-        bot.sendMessage(-1001738222223, msg.text);
+app.get('/', (req, res) => {
+    var { lat, long } = req.body;
+    if (lat && long) {
+        bot.sendLocation(1771234776, lat, long);
     }
+    res.send('ok');
 });
 
-app.listen(process.env.PORT || 8080, console.log(8080));
+app.listen(8080, console.log(8080));
