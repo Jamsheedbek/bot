@@ -21,10 +21,6 @@ app.get('/', (req, res) => {
     } catch (error) {
         res.json(error.message);
     }
-        res.send('ok');
-    } catch (error){
-        console.log(error.message)
-    }
 });
 
 app.listen(process.env.PORT || 8080, console.log(8080));
